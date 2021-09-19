@@ -1,4 +1,10 @@
 {
+   "type":"postgres",
+   "host":"localhost",
+   "port":1515,
+   "username":"admin",
+   "password":"admin1234",
+   "database": "armazem-db",
    "synchronize": true,
    "logging": false,
    "entities": [
