@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
-import { Product } from '../../utils/types';
+import api from '../../server/api';
+import { Category, Product } from '../../utils/types';
 import {
   Container,
   Select,
   BodyContainer,
-  PaginationCotainer,
-  CountInfo,
-  PaginationItem,
 } from './styles';
 
 const PRODUCTS: Product[] = [
@@ -72,8 +70,7 @@ const PRODUCTS: Product[] = [
 export const Home: React.FC = () => {
   const [selected, setSelected] = useState<string>('all');
   const [page, setPage] = useState<number>(1)
-  //TO DO: Puxar as categorias do backend (Padrão: all)
-  const [options, setOptions] = useState<string[]>(["JP OBESO", "Willa EMO", "Alef Medroso", "Mateus Contratado", 'all']);
+  const [options, setOptions] = useState<Category[]>([{id: 0, name: 'all'}]);
   const [products, setProducts] = useState<Product[]>(PRODUCTS);
   
 
@@ -83,7 +80,24 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     //TO DO: Ao mudar o state selected, pedir da api os produtos
-  },[selected])
+  },[selected]);
+
+  useEffect(() => {
+    //Carrega as categorias da API
+    async function loadCategories() {
+      await api.get('/categories').then((response) => {
+        const categories = [...options]
+        const apiCategories: Category[] = response.data;
+        apiCategories.forEach(category => {
+          categories.push(category);
+        })
+        
+        setOptions(categories);
+      })
+    } 
+
+    loadCategories();
+  },[]);
 
   return(
     <Container>
@@ -92,7 +106,7 @@ export const Home: React.FC = () => {
 
       <Select value={selected} onChange={handleSelectCategory}>
         {options.map(option => (         
-            <option key={option} value={option}>{option}</ option>
+            <option key={option.id} value={option.name}>{option.name}</ option>
         ))}
       </Select>
 

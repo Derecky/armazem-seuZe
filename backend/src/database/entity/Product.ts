@@ -13,6 +13,9 @@ export class Product {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column()
+    name: string
+
     @ManyToOne(()=>Category)
     @JoinColumn()
     category: Category;

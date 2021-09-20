@@ -19,8 +19,14 @@ productsRouter.get('/list', async (request, response) => {
 
   const category = request.query.category;
   const productsRepository = getRepository(Product);
-  const allProducts =  (await productsRepository.find({ where: {category} })).slice(start, end);
-  return response.status(201).send(allProducts);
+  const totalProducts = (await productsRepository.find())
+  const allProducts =  (await productsRepository.find({ where: {category: category} })).slice(start, end);
+  
+  return response.status(201).send({
+    products: allProducts,
+    total: totalProducts.length
+  });
+
 });
 
 productsRouter.get('/:id', async (request, response) => {

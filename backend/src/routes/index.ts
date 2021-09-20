@@ -5,7 +5,7 @@ import { categoryRouter } from './category.routes';
 const router = Router();
 
 router.use('/products', productsRouter);
-router.use('/category', categoryRouter);
+router.use('/categories', categoryRouter);
 
 
 export { router };

@@ -2,8 +2,7 @@ import {
   useContext,
   createContext,
   useState,
-  useEffect,
-  useRef
+  useEffect
 } from 'react';
 
 import { Product } from '../utils/types';
@@ -25,9 +24,6 @@ const CartContext = createContext({} as ICartContextProps);
 export default function CartProvider({children}:any){
   const [cart, setCart] = useState<Product[]>([]);
   const [total, setTotal] = useState<number>(0);
-
-  // const [ minutes, setMinutes] = useState('15');
-  // const [ seconds, setSeconds] = useState('0');
 
   function updateProduct ( item: Product, type: 'plus' | 'minus' | 'set', value?: number ){
     const newCart = [...cart];
