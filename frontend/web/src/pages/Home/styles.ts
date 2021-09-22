@@ -13,7 +13,8 @@ export const Select = styled.select`
   border: none;
   margin-top: 90px;
   width: 752px;
-  height: 50px;
+  min-height: 50px;
+
   background-color: #ffffff;
   color: #9e9e9e;
   font-size: 16;

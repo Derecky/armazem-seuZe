@@ -1,9 +1,7 @@
 import { Product } from "../../utils/types";
-import { Divider } from "../ItemCheckout/styles";
 
 import {
   Container,
-  Field,
   ItemName,
   InfoItemContainer,
   InfoContainer,

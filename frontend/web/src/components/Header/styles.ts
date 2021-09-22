@@ -108,13 +108,15 @@ export const TooltipContainer = styled.div`
 
 export const ShowCartList =  styled.div`
   width: 300px;
-  max-height: 300px;
+  //max-height: 300px;
 
 
   background-color: #FFFFFF;
   border-radius: 8px;
 
   padding-bottom: 24px;
+
+  overflow-y: auto;
 
   
 `;

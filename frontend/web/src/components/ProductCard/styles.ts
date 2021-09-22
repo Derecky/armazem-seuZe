@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   margin-top: 24px;
   width: 368px;
-  height: 150px;
+  height: 160px;
   background-color: #FFFFFF;
 
   border-radius: 8px;
@@ -31,7 +31,11 @@ export const CardImage = styled.img`
   width: 150px;
   height: 150px;
 
+  background-color: #FFFFFF;
+
   border-radius: 8px 0px 0px 8px;
+
+  padding: 8px;
 `;
 
 export const CardInfo = styled.div`
@@ -45,8 +49,9 @@ export const CardInfo = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
+  max-height: 30px;
 `;
 
 export const Description = styled.h1`
@@ -80,6 +85,7 @@ export const ButtonContainer = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   
+  
 `;
 
 export const Button = styled.button`
@@ -92,9 +98,12 @@ export const Button = styled.button`
   color: #FFFFFF;
   font-size: 14px;
 
+  justify-self: flex-end;
+
   transition: background-color 0.3s;
 
   &:hover {
     background-color: #A92B2A;
+    
   }
 `;

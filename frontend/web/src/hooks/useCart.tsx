@@ -69,6 +69,9 @@ export default function CartProvider({children}:any){
         }
       });
     } else {
+      if(item.amount > 0){
+        item.amount = 0;
+      }
       item.amount = item.amount + 1;
       newCart.push(item);
     }
@@ -77,12 +80,15 @@ export default function CartProvider({children}:any){
     setCart(newCart);
   }
 
-  function remove(item: Product){
-    const newCart = cart.filter((product) => item.id !== product.id )
-    setCart([...newCart]);
-  }
+  // function remove(item: Product){
+  //   const newCart = cart.filter((product) => item.id !== product.id )
+  //   setCart([...newCart]);
+  // }
 
   function clear(){
+    const newCart:Product[] = [...cart]
+    newCart.forEach(product => product.amount = 0);
+    setCart(newCart);
     setCart([]);
   }
 
@@ -114,30 +120,28 @@ export default function CartProvider({children}:any){
     return setTime({s:updatedS, m:updatedM});
   };
 
-  const stop = () => {
-    clearInterval(interv);
-  };
+  // const stop = () => {
+  //   clearInterval(interv);
+  // };
 
   const reset = () => {
     clearInterval(interv);
     setTime({ s:0, m:15})
   };
 
-  const resume = () => start();
+  // const resume = () => start();
 
   useEffect(() => {
     if(cart.length >= 1 && watch === true){
-      console.log("entrei no 1if")
 
       setWatch(false);
       start();
     } 
     if( cart.length === 0 && watch === false){
-      console.log("entrei no 2if")
       reset();
       setWatch(true);
     }
-  },[cart]);
+  }, [cart]);
 
   useEffect(() => {
     let newTotal = 0;

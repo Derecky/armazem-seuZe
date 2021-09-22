@@ -1,4 +1,4 @@
-import { EventHandler, ReactNode, useState } from 'react';
+import { useState } from 'react';
 import {
   Button,
   ModalOverlay,
@@ -27,11 +27,11 @@ export function Modal({buying}: ModalProps) {
     buying(true);
     clear();
   }
-  function handleOverlayClose(e: any){
-    if(e.target.id === 'overlay'){
-      setIsModalVisible(!isModalVisible);
-    }
-  }
+  // function handleOverlayClose(e: any){
+  //   if(e.target.id === 'overlay'){
+  //     setIsModalVisible(!isModalVisible);
+  //   }
+  // }
 
   return (
     <>

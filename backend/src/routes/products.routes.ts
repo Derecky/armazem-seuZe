@@ -18,13 +18,18 @@ productsRouter.get('/list', async (request, response) => {
 
 
   const category = request.query.category;
+  
   const productsRepository = getRepository(Product);
-  const totalProducts = (await productsRepository.find())
-  const allProducts =  (await productsRepository.find({ where: {category: category} })).slice(start, end);
+  let allProducts =  (await productsRepository.find());
+  
+  if(!!category){
+    console.log('Entrei aqui!')
+    allProducts =  (await productsRepository.find({ where: {category: category} }));
+  }
   
   return response.status(201).send({
-    products: allProducts,
-    total: totalProducts.length
+    products: allProducts.slice(start, end),
+    total: allProducts.length
   });
 
 });
@@ -64,9 +69,8 @@ productsRouter.post('/',async (request, response) => {
   const productsRepository = getRepository(Product)
 
   try{
-      const product = await productsRepository.save(request.body)
-      return response.status(200).json({ message: 'Success' })
-
+    const product = await productsRepository.save(request.body)
+    return response.status(200).json({ message: 'Success' })
   } catch (err){
       return response.status(401).json({ message: err })
   }

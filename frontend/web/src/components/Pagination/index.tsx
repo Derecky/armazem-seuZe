@@ -46,7 +46,7 @@ export function Pagination({
     <Container>
       <Field>
         <Text>
-          {currentPage == 1? currentPage : ((currentPage - 1) * 10) + 1 }
+          {currentPage === 1? currentPage : ((currentPage - 1) * 10) + 1 }
         </Text> 
          - 
         <Text>{currentPage * 10}</Text>

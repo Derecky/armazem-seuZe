@@ -10,77 +10,39 @@ import {
   BodyContainer,
 } from './styles';
 
-const PRODUCTS: Product[] = [
-  {
-    id: 1,
-    amount: 0,
-    description: '375 ml',
-    image: 'https://i.imgur.com/DLnknnW.jpeg',
-    name: 'Coca Cola Lata',
-    price: 3.65,
-    category: {
-      id: 1,
-      name: 'drink'
-    }
-
-  },
-  {
-    id: 2,
-    amount: 0,
-    description: '1 L',
-    image: 'https://i.imgur.com/DLnknnW.jpeg',
-    name: 'Coca Cola litrão',
-    price: 6.75,
-    category: {
-      id: 1,
-      name: 'drink'
-    }
-
-  },
-  {
-    id: 3,
-    amount: 0,
-    description: '200 g',
-    image: 'https://i.imgur.com/DLnknnW.jpeg',
-    name: 'Pipoca',
-    price: 4.75,
-    category: {
-      id: 2,
-      name: 'food'
-    }
-
-  },
-  {
-    id: 4,
-    amount: 0,
-    description: '1 L',
-    image: 'https://i.imgur.com/DLnknnW.jpeg',
-    name: 'Chicletinho',
-    price: 24.10,
-    category: {
-      id: 1,
-      name: 'drink'
-    }
-
-  } 
-]
-
-
-
 export const Home: React.FC = () => {
   const [selected, setSelected] = useState<string>('all');
   const [page, setPage] = useState<number>(1)
   const [options, setOptions] = useState<Category[]>([{id: 0, name: 'all'}]);
-  const [products, setProducts] = useState<Product[]>(PRODUCTS);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [total, setTotal] = useState<number>(0);
   
 
   function handleSelectCategory(event: any){
     setSelected(event?.target.value);
+    setPage(1);
   }
 
-  useEffect(() => {
-    //TO DO: Ao mudar o state selected, pedir da api os produtos
-  },[selected]);
+  async function loadProducts() {
+    if(selected === 'all'){
+      await api.get(`/products/list?&page=${page}`).then(response =>{
+        response.data.products.forEach((product: Product) => {
+          product.amount = 0;
+        })
+        setProducts(response.data.products);
+        setTotal(response.data.total)
+      })
+    } else {
+      const category = options.find(category => category.name === selected)
+      await api.get(`/products/list?category=${category?.id}&page=${page}`).then(response =>{
+        response.data.products.forEach((product: Product) => {
+          product.amount = 0;
+        })
+        setProducts(response.data.products);
+        setTotal(response.data.total)
+      })
+    }
+  }
 
   useEffect(() => {
     //Carrega as categorias da API
@@ -97,7 +59,17 @@ export const Home: React.FC = () => {
     } 
 
     loadCategories();
-  },[]);
+  }, []);
+
+  useEffect(() => {
+    //Carrega produtos
+
+    loadProducts();
+  }, [selected]);
+
+  useEffect(() => {
+    loadProducts();
+  }, [page])
 
   return(
     <Container>
@@ -111,7 +83,7 @@ export const Home: React.FC = () => {
       </Select>
 
       <BodyContainer>
-        {products.map(product => (
+        {!!products && products.map(product => (
           <ProductCard 
             key={product.id}
             product={product}
@@ -121,7 +93,7 @@ export const Home: React.FC = () => {
 
       <Pagination 
         onPageChange={setPage}
-        totalCountOfRegisters={1000}
+        totalCountOfRegisters={total}
         currentPage={page}
         registerPerPage={12}
       />

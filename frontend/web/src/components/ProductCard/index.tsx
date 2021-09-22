@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { Product } from '../../utils/types';
 import {
@@ -21,37 +20,17 @@ import {
 
 export function ProductCard({product}: ProductCartProps) {
 
-  const { add, cart } = useCart();
+  const { add } = useCart();
 
-  const real = Math.floor(product.price * 100 / 100)
-  const centavoAux = product.price.toString();
+   
+  const real = Math.floor(product.price * 100 / 100)  
+  const centavoAux = product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+  const centavo = centavoAux.slice( centavoAux.length - 2 , centavoAux.length)
+
   
-
   function handleAddProductOnChart(){
     add(product);
   }
-
-  /* Não sei pra quê inventei os tamanhos diferentes no preço
-    Esse useEffect é só para organizar o centavo.
-    Coloquei o state aqui, porque em outro projeto, não é necessário usar (provavelmente)
-  */
-  const [centavo, setCentavo] = useState('');
-  useEffect(() => {
-    console.log(centavoAux);
-    if(centavoAux[centavoAux.length - 1] === '.'){
-      
-      setCentavo('00') ;
-    }
-
-    if(centavoAux[centavoAux.length - 2] === '.'){
-      setCentavo(centavoAux[centavoAux.length - 1] + '0');
-      console.log('entrei aqui')
-    }
-
-    if(centavoAux[centavoAux.length - 3] === '.') {
-      setCentavo(centavoAux[centavoAux.length - 2] + centavoAux[centavoAux.length - 1])
-    }
-  }, [])
 
   return(
     <CardContainer>

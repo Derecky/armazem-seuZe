@@ -50,7 +50,6 @@ export function Header({ type }:HeaderProps) {
               <Image 
                 src={Back} 
                 alt="back"
-                onClick={() => {/* TO DO */}}
               />
             </Link>
           )}
@@ -82,11 +81,16 @@ export function Header({ type }:HeaderProps) {
       { showCart &&
         <TooltipContainer>
           <Arrow />
-          <ShowCartList>
+          <ShowCartList 
+            
+          >
             
             {cart.length >= 1? (<Title>Produtos no carrinho:</Title>) : (<Title>O carrinho está vazio!</Title>)}
             {cart.length >= 1 && cart.map(product => (
-              <CartHoveringItem  product={product}/>
+              <CartHoveringItem  
+                product={product}
+                key={product.id}
+              />
             ))}
           </ShowCartList>
         </TooltipContainer> 

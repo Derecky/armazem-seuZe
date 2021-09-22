@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { Product } from '../../utils/types';
 import {

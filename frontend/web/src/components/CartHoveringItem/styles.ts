@@ -13,10 +13,6 @@ export const Container = styled.div`
   padding-top: 32px;
 `;
 
-export const Field = styled.div`
-
-`;
-
 export const ItemName = styled.h1`
   font-size: 14px;
   font-weight: normal;

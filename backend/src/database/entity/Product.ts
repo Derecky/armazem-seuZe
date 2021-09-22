@@ -23,7 +23,9 @@ export class Product {
     @Column()
     description: string;
 
-    @Column()
+    @Column({
+        type: 'float'
+    })
     price: number;
 
     @Column()
