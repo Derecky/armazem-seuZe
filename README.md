@@ -91,7 +91,7 @@ npm run start
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://www.github.com/Derecky.png" width="60px;" alt="Derecky Costa"/><br>
+        <img src="https://www.github.com/Derecky.png" width="80px;" alt="Derecky Costa"/><br>
         <sub>
           <b>Derecky Costa</b>
         </sub>
