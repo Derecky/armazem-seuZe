@@ -85,6 +85,8 @@ npm run start
 
  ![TargetShoppingGIF](https://user-images.githubusercontent.com/21163610/134274325-e72ae5fe-c676-49b4-b987-972059e90a8e.gif)
 
+# 🤝 Colaboradores
+
 <table>
   <tr>
     <td align="center">
