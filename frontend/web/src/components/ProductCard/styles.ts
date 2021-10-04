@@ -22,20 +22,25 @@ export const CardContainer = styled.div`
 export const CardImageContainer = styled.div`
   width: 150px;
   height: 150px;
-  background-color: beige;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 8px 0px 0px 8px;
 `;
 
 export const CardImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
 
   background-color: #FFFFFF;
 
   border-radius: 8px 0px 0px 8px;
 
   padding: 8px;
+  object-fit: contain;
+
 `;
 
 export const CardInfo = styled.div`

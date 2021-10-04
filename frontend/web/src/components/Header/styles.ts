@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-  height: 100px;
   width: 100vw;
   background-color: #72463B;
 
@@ -13,9 +12,11 @@ export const Container = styled.div`
 
 export const HeaderField = styled.div`
   width: 1136px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
 `;
 

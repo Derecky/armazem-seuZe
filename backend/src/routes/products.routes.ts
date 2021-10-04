@@ -23,7 +23,6 @@ productsRouter.get('/list', async (request, response) => {
   let allProducts =  (await productsRepository.find());
   
   if(!!category){
-    console.log('Entrei aqui!')
     allProducts =  (await productsRepository.find({ where: {category: category} }));
   }
   

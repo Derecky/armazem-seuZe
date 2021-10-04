@@ -1,256 +1,270 @@
 {
+  "categories": [
+    {
+      "name": "Bebidas"
+    },
+    {
+      "name": "Comidas"
+    },
+    {
+      "name": "Materiais de limpeza"
+    },
+    {
+      "name": "Carnes e Frios"
+    }
+  ],
   "products": [
     {
       "name": "Cola-Cola Lata",
       "description": "350 ml",
       "price": 3.75,
       "image": "https://i.imgur.com/jxqhKil.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Del Valle Laranja",
       "description": "1 L",
       "price": 8.25,
       "image": "https://i.imgur.com/qt8yk1k.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Schweppes Tônica",
       "description": "350 ml",
       "price": 4.25,
       "image": "https://i.imgur.com/aWjULni.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Schweppes citrus",
       "description": "350 ml",
       "price": 5.25,
       "image": "https://i.imgur.com/FaqFvBz.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Guaraná Antartica",
       "description": "350 ml",
       "price": 3.75,
       "image": "https://i.imgur.com/OIO9mTA.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Guaraná Antartica",
       "description": "350 ml",
       "price": 3.75,
       "image": "https://i.imgur.com/OIO9mTA.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Água cristal ",
       "description": "1 L",
       "price": 4.00,
       "image": "https://i.imgur.com/rUQis1q.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Água cristal ",
       "description": "500 ml",
       "price": 4.00,
       "image": "https://i.imgur.com/GFHb9NU.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Del Valle uva - 100% integral",
       "description": "1 L",
       "price": 11.70,
       "image": "https://i.imgur.com/SIffrqX.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Ousadia - Tangerina",
       "description": "500 ml",
       "price": 5.00,
       "image": "https://i.imgur.com/CNprUOD.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Ousadia - Limão",
       "description": "500 ml",
       "price": 5.00,
       "image": "https://i.imgur.com/4ZFh9hR.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Ousadia - Morango",
       "description": "500 ml",
       "price": 5.00,
       "image": "https://i.imgur.com/rfvirbF.jpg",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Coca-Cola",
       "description": "2 L",
       "price": 6.75,
       "image": "https://i.imgur.com/AKw0RfI.png",
-      "category": 4
+      "category": 1
     },
     {
       "name": "Pão de forma - 100% integral",
       "description": "450 g",
       "price": 10.75,
       "image": "https://i.imgur.com/oJhXNKD.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Pão de forma - Tradicional",
       "description": "450 g",
       "price": 7.75,
       "image": "https://i.imgur.com/tmo0sSi.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Batata Palha - Tradicional",
       "description": "105 g",
       "price": 8.39,
       "image": "https://i.imgur.com/Tkd0vzS.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Fandangos - Presunto",
       "description": "55 g",
       "price": 3.39,
       "image": "https://i.imgur.com/XhLExve.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Doritos - Queijo Nacho",
       "description": "55 g",
       "price": 6.00,
       "image": "https://i.imgur.com/NqSlVBJ.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Milho pra Pipoca - Yoki",
       "description": "500 g",
       "price": 3.35,
       "image": "https://i.imgur.com/1GsJKsd.png",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Açúcar cristal - União",
       "description": "1 kg",
       "price": 3.95,
       "image": "https://i.imgur.com/jzSHTYZ.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Arroz Tipo 1 - Tio João",
       "description": "1 kg",
       "price": 6.95,
       "image": "https://i.imgur.com/7Fpe7LK.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Macarrão Ninho - Vitarella",
       "description": "500 g",
       "price": 4.45,
       "image": "https://i.imgur.com/KjM9YLj.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Doce de Leite - Don Doce",
       "description": "400 g",
       "price": 14.45,
       "image": "https://i.imgur.com/871MN28.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Bis - Mais Chocolate",
       "description": "125 g",
       "price": 7.99,
       "image": "https://i.imgur.com/x0rOJ0u.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Bolacha Maria - Leite - Vitarellas",
       "description": "400 g",
       "price": 5.99,
       "image": "https://i.imgur.com/ntalBDW.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Cream Cracker - Vitarela",
       "description": "400 g",
       "price": 4.50,
       "image": "https://i.imgur.com/JkqZcSL.jpg",
-      "category": 3
+      "category": 2
     },
     {
       "name": "Detergente Líquido - Ypê",
       "description": "375 ml",
       "price": 4.50,
       "image": "https://i.imgur.com/JkqZcSL.jpg",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Detergente Líquido - Toque Suave - Ypê",
       "description": "375 ml",
       "price": 5.50,
       "image": "https://i.imgur.com/y6kGsUf.jpg",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Papel Higiênico - Folha Dupla - Personal",
       "description": "30 m - 4 rolos",
       "price": 7.99,
       "image": "https://i.imgur.com/Nl6dwcC.png",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Sabão em pó - Tixan Ipê",
       "description": "2,1 kg",
       "price": 13.99,
       "image": "https://i.imgur.com/a4PYU3u.jpg",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Desinfetante - Veja",
       "description": "500 ml",
       "price": 5.80,
       "image": "https://i.imgur.com/1HTxfI2.png",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Desinfetante - Uau Perfumes",
       "description": "500 ml",
       "price": 4.50,
       "image": "https://i.imgur.com/q9oGYJC.jpg",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Água Sanitária - Ypê",
       "description": "2 L",
       "price": 4.90,
       "image": "https://i.imgur.com/KY19uzT.jpg",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Esponja de Aço - BomBril",
       "description": "60 g",
       "price": 2.50,
       "image": "https://i.imgur.com/RKWCHb6.jpg",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Pastilha sanitária - Lavanda - Pato",
       "description": "3 Pastilhas",
       "price": 3.59,
       "image": "https://i.imgur.com/3vR2iBY.png",
-      "category": 6
+      "category": 3
     },
     {
       "name": "Limpa Vidros - Veja",
       "description": "500 ml",
       "price": 8.99,
       "image": "https://i.imgur.com/pTEmkYb.jpg",
-      "category": 6
+      "category": 3
     }
   ]
 }

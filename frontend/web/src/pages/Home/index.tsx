@@ -59,7 +59,7 @@ export const Home: React.FC = () => {
     } 
 
     loadCategories();
-  }, []);
+  }, [options]);
 
   useEffect(() => {
     //Carrega produtos
