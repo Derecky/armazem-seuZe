@@ -22,6 +22,7 @@ import { useCart } from '../../hooks/useCart';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { CartHoveringItem } from '../CartHoveringItem';
+import { NONAME } from 'dns';
 
 interface HeaderProps {
   type: 'checkout' | 'home';
@@ -46,11 +47,13 @@ export function Header({ type }:HeaderProps) {
       <HeaderField>
         <ImageContainer>
           {type === 'checkout' && (
-            <Link to="/">
+            <Link to="/" style={{textDecoration: 'none', display: 'flex', alignItems:'center', color: '#FFF' }}>
               <Image 
                 src={Back} 
                 alt="back"
               />
+
+              Voltar
             </Link>
           )}
         </ImageContainer >
