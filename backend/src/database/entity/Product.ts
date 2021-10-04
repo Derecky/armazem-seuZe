@@ -1,11 +1,13 @@
-import { Category } from './Category';
 import { 
-    Entity, 
-    JoinColumn, 
-    PrimaryGeneratedColumn, 
+    Entity,
+    PrimaryGeneratedColumn,
     Column,
-    ManyToOne
-} from "typeorm";
+    ManyToOne,
+    JoinColumn
+} from 'typeorm';
+
+import { Category } from './Category';
+
 
 @Entity()
 export class Product {
