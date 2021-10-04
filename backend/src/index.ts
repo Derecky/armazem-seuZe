@@ -23,14 +23,17 @@ createConnection().then(async (connection) => {
 	
 	if(allProducts.length === 0){
 
-		// await data.categories.forEach(async (category) => {
-		// 	await connection.manager.save(Category, category);
-		// });
-		
-		data.products.forEach(async (product) => {
+		try {
+			await data.categories.forEach(async (category) => {
+				await connection.manager.save(Category, category);
+			});
+			
+			data.products.forEach(async (product) => {
+				await connection.manager.save(Product, product);
+			});
+		} catch (err){
 
-			await connection.manager.save(Product, product);
-		});
+		}
 	}
 
 
