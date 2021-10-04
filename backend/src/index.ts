@@ -1,25 +1,11 @@
 import "reflect-metadata";
-import { createConnection, getRepository } from "typeorm";
+import { createConnection, DeepPartial, getRepository } from "typeorm";
 import * as express from "express";
 import { router } from "./routes";
 import { Product } from "./database/entity/Product";
 import { Category } from './database/entity/Category';
 
 var cors = require('cors');
-
-interface ProductItem {
-	name: string,
-	description: string,
-	price: number,
-	image: string,
-	category: Category
-}
-
-interface CategoryItem {
-	name: string
-}
-
-
 
 createConnection().then(async (connection) => {
 
@@ -31,13 +17,21 @@ createConnection().then(async (connection) => {
 
 	const data = require('./assets/products.json');
 	
-	data.categories.forEach(category => {
-		connection.manager.save(Category, category);
-	});
+	const productRepository = getRepository(Product);
+	const allProducts = await productRepository.find();
 
-	data.products.forEach(product => {
-		connection.manager.save(Product, product);
-	});
+	
+	if(allProducts.length === 0){
+
+		// await data.categories.forEach(async (category) => {
+		// 	await connection.manager.save(Category, category);
+		// });
+		
+		data.products.forEach(async (product) => {
+
+			await connection.manager.save(Product, product);
+		});
+	}
 
 
 	// start express server

@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
   useEffect(() => {
     //Carrega as categorias da API
     async function loadCategories() {
-      await api.get('/categories').then((response) => {
+      api.get('/categories').then((response) => {
         const categories = [...options]
         const apiCategories: Category[] = response.data;
         apiCategories.forEach(category => {
@@ -59,17 +59,17 @@ export const Home: React.FC = () => {
     } 
 
     loadCategories();
-  }, [options]);
+  }, []);
 
   useEffect(() => {
     //Carrega produtos
 
     loadProducts();
-  }, [selected]);
+  }, [selected, page]);
 
-  useEffect(() => {
-    loadProducts();
-  }, [page])
+  // useEffect(() => {
+  //   loadProducts();
+  // }, [page])
 
   return(
     <Container>
