@@ -133,10 +133,10 @@ export default function CartProvider({children}:any){
 
   useEffect(() => {
     if(cart.length >= 1 && watch === true){
+
       setWatch(false);
       start();
     } 
-    
     if( cart.length === 0 && watch === false){
       reset();
       setWatch(true);

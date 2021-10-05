@@ -3,7 +3,7 @@ import {
     PrimaryGeneratedColumn,
     Column,
     ManyToOne,
-    JoinColumn
+    JoinTable
 } from 'typeorm';
 
 import { Category } from './Category';
@@ -19,7 +19,7 @@ export class Product {
     name: string
 
     @ManyToOne(()=>Category)
-    @JoinColumn()
+    @JoinTable()
     category: Category;
 
     @Column()
